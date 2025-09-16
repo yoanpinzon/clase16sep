@@ -8,6 +8,10 @@ public:
     string nombre;
     int id;
     int edad;
+    Estudiante() : nombre( "sin nombre"), id(0), edad(0) {}
+    Estudiante(string nom) : nombre(nom), id(0), edad(0) {};
+    Estudiante(string nom, int i, int d) : nombre(nom), id(i), edad(d) {};
+    ~Estudiante() { }
     void mostrar() {
         cout << "[ " << nombre << ", " << id << ", " << edad << " ]" << endl;
         return;
@@ -19,15 +23,13 @@ public:
 
 
 int main() {
-    Estudiante a, b;
-    a.nombre = "pedro";
-    a.id = 100;
-    a.edad = 17;
-    b.nombre = "maria";
-    b.id = 200;
-    b.edad = 18;
+    Estudiante a("pedro", 100, 17), b("maria", 200, 18);
+    Estudiante otro( "tola", 1000, 500 ), c( "carlos");
+    a.mostrar();
+    b.mostrar();
+    otro.mostrar();
+    c.mostrar();
     b.edad++;
-
     a.mostrar();
     b.mostrar();
     a.cumple();
