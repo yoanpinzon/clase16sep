@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -47,22 +48,25 @@ public:
 int main() {
     Producto a("papas", 40, 100);
     Producto b("churros", 10, 2000);
-    a.mostrar();
-    b.mostrar();
-    cout << a.getPrecio() << endl;
-    b.setPrecio(4000);
-    b.mostrar();
-    a.setCantidad(-100);
-    a.mostrar();
-    b.mostrar();
-    a.aumentarPrecio(40);
-    b.aumentarPrecio(40);
-    a.mostrar();
-    b.mostrar();
-    a.aumentarPrecioPorcentaje(10);
-    b.aumentarPrecioPorcentaje(80);
-    a.mostrar();
-    b.mostrar();
+    vector<Producto> tienda;
+    tienda.push_back( a );
+    tienda.push_back( b );
+    tienda.emplace_back("huevos", 100, 800 );
+    tienda.emplace_back("arroz", 50, 20000 );
+    for ( auto& p : tienda ) {
+        p.mostrar();
+    }
+    int suma = 0;
+    for ( auto& p : tienda ) {
+        suma += p.getCantidad() * p.getPrecio();
+    }
+    cout << "Total invetario=" << suma << endl;
+    tienda[3].setPrecio(2000);
+    suma = 0;
+    for (auto& p : tienda) {
+        suma += p.getCantidad() * p.getPrecio();
+    }
+    cout << "Total invetario=" << suma << endl;
 
     return 0;
 }
