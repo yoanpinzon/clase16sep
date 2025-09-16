@@ -1,0 +1,3 @@
+C:/Users/Portatil/Desktop/CLionProjects/clase16sep/cmake-build-debug/CMakeFiles/clase16sep.dir
+C:/Users/Portatil/Desktop/CLionProjects/clase16sep/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Portatil/Desktop/CLionProjects/clase16sep/cmake-build-debug/CMakeFiles/rebuild_cache.dir
